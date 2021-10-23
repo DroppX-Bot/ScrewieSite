@@ -1,43 +1,99 @@
-(function(){"use strict";const select=(el,all=false)=>{el=el.trim()
-if(all){return[...document.querySelectorAll(el)]}else{return document.querySelector(el)}}
-const on=(type,el,listener,all=false)=>{let selectEl=select(el,all)
-if(selectEl){if(all){selectEl.forEach(e=>e.addEventListener(type,listener))}else{selectEl.addEventListener(type,listener)}}}
-const onscroll=(el,listener)=>{el.addEventListener('scroll',listener)}
-let navbarlinks=select('#navbar .scrollto',true)
-const navbarlinksActive=()=>{let position=window.scrollY+200
-navbarlinks.forEach(navbarlink=>{if(!navbarlink.hash)return
-let section=select(navbarlink.hash)
-if(!section)return
-if(position>=section.offsetTop&&position<=(section.offsetTop+section.offsetHeight)){navbarlink.classList.add('active')}else{navbarlink.classList.remove('active')}})}
-window.addEventListener('load',navbarlinksActive)
-onscroll(document,navbarlinksActive)
-const scrollto=(el)=>{let header=select('#header')
-let offset=header.offsetHeight
-if(!header.classList.contains('fixed-top')){offset+=70}
-let elementPos=select(el).offsetTop
-window.scrollTo({top:elementPos-offset,behavior:'smooth'})}
-let selectHeader=select('#header')
-let selectTopbar=select('#topbar')
-if(selectHeader){const headerScrolled=()=>{if(window.scrollY>100){selectHeader.classList.add('header-scrolled')
-if(selectTopbar){selectTopbar.classList.add('topbar-scrolled')}}else{selectHeader.classList.remove('header-scrolled')
-if(selectTopbar){selectTopbar.classList.remove('topbar-scrolled')}}}
-window.addEventListener('load',headerScrolled)
-onscroll(document,headerScrolled)}
-let backtotop=select('.back-to-top')
-if(backtotop){const toggleBacktotop=()=>{if(window.scrollY>100){backtotop.classList.add('active')}else{backtotop.classList.remove('active')}}
-window.addEventListener('load',toggleBacktotop)
-onscroll(document,toggleBacktotop)}
-on('click','.mobile-nav-toggle',function(e){select('#navbar').classList.toggle('navbar-mobile')
-this.classList.toggle('bi-list')
-this.classList.toggle('bi-x')})
-on('click','.navbar .dropdown > a',function(e){if(select('#navbar').classList.contains('navbar-mobile')){e.preventDefault()
-this.nextElementSibling.classList.toggle('dropdown-active')}},true)
-on('click','.scrollto',function(e){if(select(this.hash)){e.preventDefault()
-let navbar=select('#navbar')
-if(navbar.classList.contains('navbar-mobile')){navbar.classList.remove('navbar-mobile')
-let navbarToggle=select('.mobile-nav-toggle')
-navbarToggle.classList.toggle('bi-list')
-navbarToggle.classList.toggle('bi-x')}
-scrollto(this.hash)}},true)
-window.addEventListener('load',()=>{if(window.location.hash){if(select(window.location.hash)){scrollto(window.location.hash)}}});let preloader=select('#preloader');if(preloader){window.addEventListener('load',()=>{preloader.remove()});}
-new Swiper('.clients-slider',{speed:400,loop:true,autoplay:{delay:5000,disableOnInteraction:false},slidesPerView:'auto',pagination:{el:'.swiper-pagination',type:'bullets',clickable:true},breakpoints:{320:{slidesPerView:2,spaceBetween:40},480:{slidesPerView:3,spaceBetween:60},640:{slidesPerView:4,spaceBetween:80},992:{slidesPerView:6,spaceBetween:120}}});window.addEventListener('load',()=>{let portfolioContainer=select('.portfolio-container');if(portfolioContainer){let portfolioIsotope=new Isotope(portfolioContainer,{itemSelector:'.portfolio-item',layoutMode:'fitRows'});let portfolioFilters=select('#portfolio-flters li',true);on('click','#portfolio-flters li',function(e){e.preventDefault();portfolioFilters.forEach(function(el){el.classList.remove('filter-active');});this.classList.add('filter-active');portfolioIsotope.arrange({filter:this.getAttribute('data-filter')});portfolioIsotope.on('arrangeComplete',function(){AOS.refresh()});},true);}});const portfolioLightbox=GLightbox({selector:'.portfolio-lightbox'});new Swiper('.portfolio-details-slider',{speed:400,loop:true,autoplay:{delay:5000,disableOnInteraction:false},pagination:{el:'.swiper-pagination',type:'bullets',clickable:true}});window.addEventListener('load',()=>{AOS.init({duration:1000,easing:'ease-in-out',once:true,mirror:false})});})()
+/*=============== SHOW MENU ===============*/
+const navMenu = document.getElementById('nav-menu'),
+      navToggle = document.getElementById('nav-toggle'),
+      navClose = document.getElementById('nav-close')
+
+/*===== MENU SHOW =====*/
+/* Validate if constant exists */
+if(navToggle){
+    navToggle.addEventListener('click', () =>{
+        navMenu.classList.add('show-menu')
+    })
+}
+
+/*===== MENU HIDDEN =====*/
+/* Validate if constant exists */
+if(navClose){
+    navClose.addEventListener('click', () =>{
+        navMenu.classList.remove('show-menu')
+    })
+}
+
+/*=============== REMOVE MENU MOBILE ===============*/
+const navLink = document.querySelectorAll('.nav__link')
+
+function linkAction(){
+    const navMenu = document.getElementById('nav-menu')
+    // When we click on each nav__link, we remove the show-menu class
+    navMenu.classList.remove('show-menu')
+}
+navLink.forEach(n => n.addEventListener('click', linkAction))
+
+/*=============== HOME SWIPER ===============*/
+let homeSwiper = new Swiper(".home-swiper", {
+    spaceBetween: 30,
+    loop: 'true',
+    
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+})
+
+/*=============== CHANGE BACKGROUND HEADER ===============*/
+function scrollHeader(){
+    const header = document.getElementById('header')
+    // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
+    if(this.scrollY >= 50) header.classList.add('scroll-header'); else header.classList.remove('scroll-header')
+}
+window.addEventListener('scroll', scrollHeader)
+
+/*=============== NEW SWIPER ===============*/
+let newSwiper = new Swiper(".new-swiper", {
+    centeredSlides: true,
+    slidesPerView: "auto",
+    loop: 'true',
+    spaceBetween: 16,
+});
+
+/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const sections = document.querySelectorAll('section[id]')
+
+function scrollActive(){
+    const scrollY = window.pageYOffset
+
+    sections.forEach(current =>{
+        const sectionHeight = current.offsetHeight,
+              sectionTop = current.offsetTop - 58,
+              sectionId = current.getAttribute('id')
+
+        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
+        }else{
+            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
+        }
+    })
+}
+window.addEventListener('scroll', scrollActive)
+
+/*=============== SHOW SCROLL UP ===============*/ 
+function scrollUp(){
+    const scrollUp = document.getElementById('scroll-up');
+    // When the scroll is higher than 460 viewport height, add the show-scroll class to the a tag with the scroll-top class
+    if(this.scrollY >= 460) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
+}
+window.addEventListener('scroll', scrollUp)
+
+/*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2500,
+    delay: 400,
+    // reset: true
+})
+
+sr.reveal(`.home-swiper, .new-swiper, .newsletter__container`)
+sr.reveal(`.category__data, .trick__content, .footer__content`,{interval: 100})
+sr.reveal(`.about__data, .discount__img`,{origin: 'left'})
+sr.reveal(`.about__img, .discount__data`,{origin: 'right'})

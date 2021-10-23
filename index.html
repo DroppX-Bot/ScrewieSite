@@ -1,182 +1,223 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Screwie</title>
-<meta content="" name="description">
-<meta content="" name="keywords">
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="assets/img/favicon.png" rel="icon">
-<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        <!--=============== BOXICONS ===============-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
-<link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-<link href="assets/vendor/aos/aos.css" rel="stylesheet">
-<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-<link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+        <!--=============== SWIPER CSS ===============--> 
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
 
-<link href="assets/css/style.css" rel="stylesheet">
-</head>
-<body>
+        <!--=============== CSS ===============--> 
+        <link rel="stylesheet" href="assets/css/styles.css">
 
-<div id="topbar" class="fixed-top d-flex align-items-center ">
-<div class="container d-flex align-items-center justify-content-center justify-content-md-between">
-<div class="contact-info d-flex align-items-center">
-<i class="bi bi-envelope-fill"></i><a href="/cdn-cgi/l/email-protection#a6c5c9c8d2c7c5d2e6c3dec7cbd6cac388c5c9cb"><span class="__cf_email__" data-cfemail="d4b7bbbaa0b5b7a094b6b8a1b1b2bbaca2a4bafab7bbb9">[email&#160;protected]</span></a>
+        <title>Screwie</title>
+    </head>
+    <body>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">
+                    <img src="assets/img/logo.png" alt="" class="nav__logo-img">
+                    Screwie
+                </a>
 
-</div>
-<div class="cta d-none d-md-block">
-<a href="https://discord.gg/zJSenzGQWU" class="scrollto">Discord</a>
-</div>
-</div>
-</div>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">Home</a>
+                        </li>
 
-<header id="header" class="fixed-top d-flex align-items-center ">
-<div class="container d-flex align-items-center justify-content-between">
-<h1 class="logo"><a href="index.html">Screwie</a></h1>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">About</a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#trick" class="nav__link">Bots</a>
+                        </li>
+
+                        <a href="https://discord.gg/zJSenzGQWU" class="button button--ghost">Support</a>
+                    </ul>
+
+                    <div class="nav__close" id="nav-close">
+                        <i class='bx bx-x'></i>
+                    </div>
+
+                    <img src="assets/img/nav-img.png" alt="" class="nav__img">
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-grid-alt'></i>
+                </div>
+
+            </nav>
+        </header>
+
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home container" id="home">
+                <div class="swiper home-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- HOME SLIDER 1 -->
+                        <section class="swiper-slide">
+                            <div class="home__content grid">
+                                <div class="home__group">
+                                    <img src="assets/img/home1-img.png" alt="" class="home__img">
+                                    <div class="home__indicator"></div>
+    
+                                    <div class="home__details-img">
+                                        <h4 class="home__details-title">The Living Screw</h4>
+                                        <span class="home__details-subtitle">Global Banning/Moderation/Utility</span>
+                                    </div>
+                                </div>
+    
+                                <div class="home__data">
+                                    <h3 class="home__subtitle">Screwie</h3>
+                                    <h1 class="home__title">Build the 
+                                        best Discord Server!</h1>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- HOME SLIDER 2 -->
+                        <section class="swiper-slide">
+                            <div class="home__content grid">
+                                <div class="home__group">
+                                    <img src="assets/img/home2-img.png" alt="" class="home__img">
+                                    <div class="home__indicator"></div>
+    
+                                    <div class="home__details-img">
+                                        <h4 class="home__details-title">Economy</h4>
+                                    </div>
+                                </div>
+    
+                                <div class="home__data">
+                                    <h3 class="home__subtitle">Dank Money</h3>
+                                    <h1 class="home__title">Danker Money</h1>
+                                    <p class="home__description">Economy Bot!
+                                    </p>
+
+                                    <div class="home__buttons">
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- HOME SLIDER 3 -->
+
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+            
+            <!--==================== CATEGORY ====================-->
+            <section class="section category">
+                <h2 class="section__title">Features</h2>
+
+                <div class="category__container container grid">
+                    <div class="category__data">
+                        <img src="assets/img/category1-img.png" alt="" class="category__img">
+                        <h3 class="category__title">Global Banning</h3>
+                        <p class="category__description">We Have A Feature Called Global Banning, This Will Global Ban Someone From EVERY Server The Bot Is In!</p>
+                    </div>
+
+                    <div class="category__data">
+                        <img src="assets/img/category2-img.png" alt="" class="category__img">
+                        <h3 class="category__title">Moderation</h3>
+                        <p class="category__description">Our Bot Has Moderation Commands!</p>
+                    </div>
+
+                    <div class="category__data">
+                        <img src="assets/img/category3-img.png" alt="" class="category__img">
+                        <h3 class="category__title">Custom Prefix's</h3>
+                        <p class="category__description">Every Server Owner Needs A Certain Prefix For Every Bot!, With Screwie You Can Set Your Own Prefix (If You Own The Server)!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== ABOUT ====================-->
+            <section class="section about" id="about">
+                <div class="about__container container grid">
+                    <div class="about__data">
+                        <h2 class="section__title about__title">About Screwie</h2>
+                        <p class="about__description">Screwie Was Founded On September 27th 2021, Are Goal Here At Screwie Is To Make Servers More Secure And Keep Them Protected From The Bad Activity Of Others.
+                        </p>
+                        <a href="#" class="button">Know more</a>
+                    </div>
+
+                    <img src="assets/img/about-img.png" alt="" class="about__img">
+                </div>
+            </section>
+
+            <!--==================== TRICK OR TREAT ====================-->
+            <section class="section trick" id="trick">
+                <h2 class="section__title">Bots Made By The Screwie Team!</h2>
+
+                <div class="trick__container container grid">
+                    <div class="trick__content">
+                        <img src="assets/img/trick-treat1-img.png" alt="" class="trick__img">
+                        <h3 class="trick__title">Screwie</h3>
+                        <span class="trick__subtitle">Global Banning/Moderation/Utility</span>
+                        
+                        <button class="button trick__button">
+                            <a href="https://discord.com/oauth2/authorize?client_id=892100146341478400&permissions=395636899031&scope=bot" class='bx bx-cart-alt trick__icon'></a>
+                        </button>
+                    </div>
+
+                    <div class="trick__content">
+                        <img src="assets/img/trick-treat2-img.png" alt="" class="trick__img">
+                        <h3 class="trick__title">Dank Money</h3>
+                        <span class="trick__subtitle">Economy</span>
+                        <button class="button trick__button">
+                            <a href="https://discord.com/oauth2/authorize?client_id=898932179575390278&permissions=201403392&scope=bot" class='bx bx-cart-alt trick__icon'></a>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== NEW ARRIVALS ====================-->
 
 
-<nav id="navbar" class="navbar">
-<ul>
-<li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-<li><a class="nav-link scrollto" href="#team">Team</a></li>
-<li class="dropdown"><a href="#"><span>Links</span> <i class="bi bi-chevron-down"></i></a>
-<ul>
-<li><a href="https://discord.gg/zJSenzGQWU">Community Discord</a></li>
-<li><a href="https://www.trustpilot.com/review/Screwie.com">Trustpilot</a></li>
-</ul>
-</li>
-</ul>
-<i class="bi bi-list mobile-nav-toggle"></i>
-</nav>
-</div>
-</header>
-
-<section id="hero" class="d-flex justify-cntent-center align-items-center">
-<div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
-
-<div class="carousel-item active">
-<div class="carousel-container">
-<h2 class="animate__animated animate__fadeInDown">Build the best <span>Discord Server!</span></h2>
-<p class="animate__animated animate__fadeInUp">Use Our Bot To Help You Build The Best Discord Server!</p>
-<a href="https://discord.com/oauth2/authorize?client_id=892100146341478400&permissions=395636899031&scope=bot" class="btn-get-started animate__animated animate__fadeInUp scrollto">Add to Discord</a>
-</div>
-</div>
+            <!--==================== OUR NEWSLETTER ====================-->
 
 
+        <!--==================== FOOTER ====================-->
+            <footer class="footer section">
+                <div class="footer__container container grid">
+                    <div class="footer__content">
+                        <a href="#" class="footer__logo">
+                            <img src="assets/img/logo.png" alt="" class="footer__logo-img">
+                            Screwie
+                        </a>
 
-</div>
-</section>
-<main id="main">
+                        <p class="footer__description">Enjoy the scariest night <br> of your life.</p>
+                        
+                        <div class="footer__social">
+                            <a href="https://twitter.com/ScrewieBot" target="_blank" class="footer__social-link">
+                                <i class='bx bxl-twitter' ></i>
+                            </a>
+                        </div>
+                    </div>
 
-<section id="icon-boxes" class="icon-boxes">
-<div class="container">
-<div class="row">
-<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
-<div class="icon-box">
-<div class="icon"><i class="bx bxl-dribbble"></i></div>
-<h4 class="title"><a href="">Moderation</a></h4>
-<p class="description">Our Bot Has Moderation Commands!</p>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
-<div class="icon-box">
-<div class="icon"><i class="bx bx-file"></i></div>
-<h4 class="title"><a href="">Speed</a></h4>
-<p class="description">Our Screwie Bot Is As Fast As Ever We Provide Super Fast Response Time!</p>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
-<div class="icon-box">
-<div class="icon"><i class="bx bx-tachometer"></i></div>
-<h4 class="title"><a href="">Support</a></h4>
-<p class="description">Our support team is working constantly around the clock to provide each and every client with the support experience, they deserve</p>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
-<div class="icon-box">
-<div class="icon"><i class="bx bx-layer"></i></div>
-<h4 class="title"><a href="">Global Banning</a></h4>
-<p class="description">We Have A Feature Called Global Banning, This Will Global Ban Someone From EVERY Server The Bot Is In!</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-</div>
-</div>
-</div>
-</div>
-</section>
+                <img src="assets/img/footer1-img.png" alt="" class="footer__img-one">
+                <img src="assets/img/footer2-img.png" alt="" class="footer__img-two">
+            </footer>
 
-<section id="clients" class="clients">
-<div class="container" data-aos="zoom-in">
-<div class="section-title">
-<h2>Clients</h2>
-<p>Below are some of our most popular clients that use us on a daily basis.</p>
-</div>
-<div class="clients-slider swiper-container">
-<div class="swiper-wrapper align-items-center">
-<div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
-<div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-</div>
-<div class="swiper-pagination"></div>
-</div>
-</div>
-</section>
+            <!--=============== SCROLL UP ===============-->
+            <a href="#" class="scrollup" id="scroll-up">
+                <i class='bx bx-up-arrow-alt scrollup__icon'></i>
+            </a>
+        
+        <!--=============== SCROLL REVEAL ===============-->
+        <script src="assets/js/scrollreveal.min.js"></script>
 
-<section id="team" class="team section-bg">
-<div class="container" data-aos="fade-up">
-<div class="section-title">
-<h2>Team</h2>
-<p>Screwie's team is full of potential and is ready to offer you with our amazing services that we believe truly believe are revolutionary to the Bot market.</p>
-</div>
-<div class="row">
-<div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-<div class="member d-flex align-items-start">
-<div class="pic"><img src="assets/img/team/FlaringPhoenix.gif" class="img-fluid" alt=""></div>
-<div class="member-info">
-<h4>Screw</h4>
-<span>Chief Executive Officer</span>
-<p></p>
-<div class="social">
-<a href=""><i class="ri-twitter-fill"></i></a>
-<a href="https://github.com/DroppX-Bot"> <i class="ri-github-fill"></i> </a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-</p>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</section>
-</main>
-
-
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/vendor/aos/aos.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
-<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-<script src="assets/js/main.js"></script>
-</body>
+        <!--=============== SWIPER JS ===============-->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+    </body>
 </html>
